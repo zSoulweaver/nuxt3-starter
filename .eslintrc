@@ -1,0 +1,46 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "vue/setup-compiler-macros": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "standard-with-typescript",
+    "plugin:vue/vue3-recommended"
+  ],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [".vue"]
+  },
+  "plugins": [
+    "vue",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/triple-slash-reference": "off",
+    "no-undef": "off",
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": "off"
+  },
+  "ignorePatterns": [
+    "**/codegen/**/*.ts",
+    "*.d.ts"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "pages/**/*.vue",
+        "layouts/**/*.vue"
+      ],
+      "rules": {
+        "vue/multi-word-component-names": "off"
+      }
+    }
+  ]
+}
